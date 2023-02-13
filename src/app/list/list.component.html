@@ -1,0 +1,22 @@
+<body>
+  <h1>ToDo List by Fede</h1>
+  <div class="container">
+    <div class="todo-list">
+      <input type="text" [(ngModel)]="newTaskText" />
+      <button class="add-btn" (click)="addTask()">Add</button>
+      <div class="task-list">
+        <ul *ngFor="let e of list; let i = index">
+          {{
+            e.text
+          }}
+          <input
+            type="checkbox"
+            (click)="checkTask(i)"
+            [attr.checked]="e.check ? '' : null"
+          />
+          <button class="remove-btn" (click)="removeTask(i)">Remove</button>
+        </ul>
+      </div>
+    </div>
+  </div>
+</body>
